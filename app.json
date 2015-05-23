@@ -1,0 +1,12 @@
+{
+    "name": "Slack HowDoI",
+    "description": "How do i lib integration on slack",
+    "keywords": [
+        "slack",
+        "flask",
+        "python",
+        "web",
+        "howdoi"
+    ],
+    "repository": "https://github.com/ellisonleao/slack-howdoi"
+}
