@@ -34,9 +34,9 @@ def howdoi():
 
     # formatting
     output = """
-        ```
-        {}
-        ```
+    ```
+    {}
+    ```
     """.format(output)
     return Response(output, content_type='text/plain; charset=utf-8')
 
