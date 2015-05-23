@@ -3,7 +3,7 @@
 A slack integration for the awesome [howdoi](https://github.com/gleitz/howdoi) library.
 Heavily inspired by [https://github.com/karan/slack-overflow](https://github.com/karan/slack-overflow)
 
-![](http://i.imgur.com/z0LjrBq.png)
+![](http://i.imgur.com/HuH6wf0.png)
 
 ## Usage
 
