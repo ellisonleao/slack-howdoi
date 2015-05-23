@@ -14,7 +14,7 @@ From any Slack channel, just type `/howdoi [search terms]`. The questions will b
 3. Scroll all the way down to **DIY Integrations & Customizations section**.
 4. Click on **Add** next to **Slash Commands**.
   - Command: `/howdoi`
-  - URL: `http://so.goel.io/overflow`
+  - URL: `http://<YOUR_APPLICATION_URL>/howdoi`
   - Method: `POST`
   - For the **Autocomplete help text**, check to show the command in autocomplete list.
     - Description: `Howdoi slack integration`
