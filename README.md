@@ -1,7 +1,9 @@
 # slack-howdoi
 
 A slack integration for the awesome [howdoi](https://github.com/gleitz/howdoi) library.
-Inspired by [https://github.com/karan/slack-overflow](https://github.com/karan/slack-overflow)
+Heavily inspired by [https://github.com/karan/slack-overflow](https://github.com/karan/slack-overflow)
+
+![](http://i.imgur.com/z0LjrBq.png)
 
 ## Usage
 
