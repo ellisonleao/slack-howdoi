@@ -17,6 +17,7 @@ From any Slack channel, just type `/howdoi [search terms]`. The questions will b
 4. Click on **Add** next to **Slash Commands**.
   - Command: `/howdoi`
   - URL: `http://<YOUR_APPLICATION_URL>/howdoi`
+	P.S: If you want to test right now, you can use `https://slack-howdoi.herokuapp.com/` as the URL
   - Method: `POST`
   - For the **Autocomplete help text**, check to show the command in autocomplete list.
     - Description: `Howdoi slack integration`
