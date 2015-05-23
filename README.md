@@ -7,7 +7,7 @@ Heavily inspired by [https://github.com/karan/slack-overflow](https://github.com
 
 ## Usage
 
-From any Slack channel, just type `/howdoi [search terms]`. The questions will be shown on the same channel visible just to you.
+From any Slack channel, just type `/howdoi [search terms]`. The best answer will be shown on the chat, if found.
 
 ## Integrate with your team
 
