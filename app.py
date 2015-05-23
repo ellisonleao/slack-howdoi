@@ -17,7 +17,11 @@ def _search(query):
     p = subprocess.Popen(q, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                          shell=True)
     output, error = p.communicate()
-    return output or error
+    if error:
+        return error
+
+    output = "```\n{}```".format(output)
+    return output
 
 
 @app.route('/howdoi', methods=['post'])
@@ -28,16 +32,7 @@ def howdoi():
     """
     text = request.values.get('text')
     output = _search(text)
-
-    # cleaning
-    filter(None, output.replace('\r', '').split('\n'))
-
     # formatting
-    output = """
-    ```
-    {}
-    ```
-    """.format(output)
     return Response(output, content_type='text/plain; charset=utf-8')
 
 
