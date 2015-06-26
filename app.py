@@ -2,11 +2,7 @@
 import subprocess
 import os
 
-from flask import Flask, request, Response
-
-
-app = Flask(__name__)
-app.debug = os.environ.get('DEBUG', False)
+from bottle import post, request, run
 
 
 def _search(query):
@@ -24,23 +20,19 @@ def _search(query):
     return output
 
 
-@app.route('/howdoi', methods=['post'])
+@post('/howdoi')
 def howdoi():
     """
     Example:
         /howdoi open file python
     """
-    text = request.values.get('text')
+    text = request.query.text
     output = _search(text)
     # formatting
-    return Response(output, content_type='text/plain; charset=utf-8')
-
-
-@app.route('/')
-def home():
-    return Response(':)', content_type='text/plain; charset=utf-8')
+    return output
 
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    debug = os.environ.get('DEBUG', False)
+    run(host='0.0.0.0', port=port, debug=debug)
