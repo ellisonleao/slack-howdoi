@@ -27,6 +27,9 @@ def howdoi():
         /howdoi open file python
     """
     text = request.query.text
+    if not text:
+        return 'Please type a ?text= param'
+
     output = _search(text)
     # formatting
     return output
