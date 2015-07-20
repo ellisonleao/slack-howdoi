@@ -2,7 +2,7 @@
 import subprocess
 import os
 
-from bottle import post, request, run, hook
+from bottle import post, request, run, hook, template, route
 
 
 @hook('before_request')
@@ -38,6 +38,11 @@ def howdoi():
     output = _search(text)
     # formatting
     return output
+
+
+@route('/')
+def index():
+    return template('index')
 
 
 if __name__ == '__main__':
