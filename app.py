@@ -2,7 +2,12 @@
 import subprocess
 import os
 
-from bottle import post, request, run
+from bottle import post, request, run, hook
+
+
+@hook('before_request')
+def strip_path():
+    request.environ['PATH_INFO'] = request.environ['PATH_INFO'].rstrip('/')
 
 
 def _search(query):
