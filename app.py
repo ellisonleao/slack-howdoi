@@ -31,7 +31,7 @@ def howdoi():
     Example:
         /howdoi open file python
     """
-    text = request.query.text
+    text = request.forms.text
     if not text:
         return 'Please type a ?text= param'
 
