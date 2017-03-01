@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-import subprocess
 import os
 
 from bottle import post, request, run, hook, template, route
+
+from howdoi import howdoi
 
 
 @hook('before_request')
@@ -10,23 +11,8 @@ def strip_path():
     request.environ['PATH_INFO'] = request.environ['PATH_INFO'].rstrip('/')
 
 
-def _search(query):
-    """
-    Search method
-    """
-    q = 'howdoi {}'.format(query)
-    p = subprocess.Popen(q, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                         shell=True)
-    output, error = p.communicate()
-    if error:
-        return error
-
-    output = "```\n{}```".format(output)
-    return output
-
-
 @post('/howdoi')
-def howdoi():
+def howdoi_handler():
     """
     Example:
         /howdoi open file python
@@ -35,8 +21,19 @@ def howdoi():
     if not text:
         return 'Please type a ?text= param'
 
-    output = _search(text)
-    # formatting
+    # adding default params
+    args = {
+        'query': text.split(),
+        'pos': 1,
+        'all': False,
+        'link': False,
+        'clear_cache': False,
+        'version': False,
+        'num_answers': 1,
+        'color': False,
+    }
+
+    output = howdoi.howdoi(args)
     return output
 
 
